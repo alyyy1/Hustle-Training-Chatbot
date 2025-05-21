@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hustle Training 360 - Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 300px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #c8102e;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #c8102e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .response {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="{{ url_for('static', filename='FULL_LOGO-1024x173.webp') }}" alt="Logo" class="logo">
+
+    <h1>Ask Hustle Training 360</h1>
+
+    <form method="post">
+        <input type="text" name="user_input" placeholder="Type your question..." required>
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if response %}
+    <div class="response">
+        <h3>Response:</h3>
+        <p>{{ response }}</p>
+    </div>
+    {% endif %}
+
+</body>
+</html>
